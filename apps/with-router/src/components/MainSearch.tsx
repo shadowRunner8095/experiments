@@ -110,7 +110,6 @@ export function MainSearch({ search, withInitialAction }: MainSearchProps) {
           ))}
         </div>
       </ErrorBoundary>
-
     </div>
   );
 }

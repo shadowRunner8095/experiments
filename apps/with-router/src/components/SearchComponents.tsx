@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState, Suspense, use } from 'react';
-import type { ChangeEvent, ReactNode } from 'react';
+import { useRef, useEffect } from 'react';
+import type { ReactNode } from 'react';
 
 export interface SearchResult {
   id: string;
