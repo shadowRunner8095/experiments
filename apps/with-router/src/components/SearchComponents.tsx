@@ -12,7 +12,7 @@ export interface SearchFunction {
 
 
 export function CharacterCard({ id, text }: SearchResult) {
-    console.log('card', id)
+
   return (
     <div style={{ 
       border: '1px solid #ccc', 
