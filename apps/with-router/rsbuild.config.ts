@@ -2,9 +2,11 @@ import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { tanstackRouter } from '@tanstack/router-plugin/rspack'
 
-export default defineConfig({
+export default defineConfig(({command})=>{
+  console.log({command})
+  return ({
   output: {
-    assetPrefix: '/experiments/with-router/',
+    assetPrefix: command === 'build' ? '/experiments/with-router/': undefined,
   },
   plugins: [pluginReact()],
   tools: {
@@ -18,4 +20,4 @@ export default defineConfig({
       ],
     },
   },
-});
+})});
