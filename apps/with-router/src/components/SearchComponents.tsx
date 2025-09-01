@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 export interface SearchResult {
   id: string;
@@ -51,7 +51,7 @@ export function SearchInput({
   );
 }
 
-export function LoadingSpinner({ children = "Loading..." }: { children?: ReactNode }) {
+export function LoadingSpinner({ children = "Loading..." }: PropsWithChildren) {
   return (
     <div style={{ 
       minHeight: '0vh', 
@@ -80,7 +80,8 @@ export function IntersectionSentinel({
       }
     });
 
-    if (sentinelRef.current) observer.observe(sentinelRef.current);
+    if (sentinelRef.current) 
+      observer.observe(sentinelRef.current);
 
     return () => observer.disconnect();
   }, [onIntersect]);
