@@ -32,7 +32,7 @@ function InputLayout({ deferedValue, ...props }: PropsWithChildren<InputLayoutPr
     style={{
       borderStyle: 'solid',
       borderWidth: '1px',
-      borderColor:  data.error ? 'red' : 'black',
+      borderColor:  deferedValue === promise ? data.error ? 'red' : 'black': 'black',
       display: 'flex'
     }}
     {...props}
@@ -81,15 +81,18 @@ export default function SearchInputWithPromiseValidation(
   }
 
 
-
-  return <Suspense fallback={'outer loading'} ><div>
+  return <Suspense fallback={'outer loading'} >
+    <div>
     <InputLayoutComponent
       deferedValue={query}
     >
-      <input style={{
-        border: 'none',
-        outline: 'none'
-      }} onChange={onChange} />
+      <input 
+        style={{
+          border: 'none',
+          outline: 'none'
+        }} 
+        onChange={onChange} 
+      />
       <Suspense 
         fallback={<div>Loading</div>}
       >
