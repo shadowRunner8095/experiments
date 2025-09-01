@@ -96,7 +96,9 @@ export default function SearchInputWithPromiseValidation(
       <Suspense 
         fallback={<div>Loading</div>}
       >
-        <IconWrapper query={query} />
+        <IconWrapper 
+          query={query} 
+        />
       </Suspense>
     </InputLayoutComponent>
     <Suspense>
