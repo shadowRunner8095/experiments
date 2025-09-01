@@ -1,6 +1,8 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
 import { Route as IndexRoute } from '.'
 import { Suspense, use, useCallback, useState } from 'react';
+import SearchInputWithPromiseValidation from '../components/SearchInputWithAsyncValidation';
+import { wait } from '../utils';
 
 export const Route = createLazyFileRoute('/')({
   component: RouteComponent,
