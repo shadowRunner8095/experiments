@@ -1,6 +1,9 @@
 import type { StorybookConfig } from 'storybook-react-rsbuild';
 
 const config: StorybookConfig = {
+  previewHead: ()=>{
+    return `<base href="/experiments/with-router/storybook/">`
+  },
   "stories": [
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
