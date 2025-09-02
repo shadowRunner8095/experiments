@@ -1,8 +1,14 @@
 import type { StorybookConfig } from 'storybook-react-rsbuild';
 
+
+
 const config: StorybookConfig = {
-  previewHead: ()=>{
-    return `<base href="/experiments/with-router/storybook/">`
+  rsbuildFinal: (config) => {
+    if(process.env.NODE_ENV !== 'production')
+      return config;
+    config.output ??= {};
+    config.output.assetPrefix = '/experiments/with-router/storybook/'; // adjust to your deployment path
+    return config;
   },
   "stories": [
     "../src/**/*.mdx",
