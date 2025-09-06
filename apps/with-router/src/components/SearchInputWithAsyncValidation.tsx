@@ -81,8 +81,7 @@ export default function SearchInputWithPromiseValidation(
   }
 
 
-  return <Suspense fallback={'outer loading'} >
-    <div>
+  return <div>
     <InputLayoutComponent
       deferedValue={query}
     >
@@ -105,5 +104,4 @@ export default function SearchInputWithPromiseValidation(
       <ErrorText query={query} />
     </Suspense>
   </div>
-  </Suspense>
-} 
+}

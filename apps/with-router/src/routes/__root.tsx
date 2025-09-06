@@ -1,7 +1,10 @@
 import * as React from 'react'
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
+import type { Container } from 'inversify'
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  globalContainer: Container
+}>()({
   component: RootComponent,
 })
 

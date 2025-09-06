@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from 'storybook-react-rsbuild';
 import SearchInputWithPromiseValidation, { IncorrectInputLayout } from './SearchInputWithAsyncValidation';
 import { fn} from 'storybook/test'
 import { wait } from '../utils';
+import { Suspense } from 'react';
 
 
 // Mock validation functions
@@ -27,6 +28,7 @@ const meta: Meta<typeof SearchInputWithPromiseValidation> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
+  decorators: [Story => <Suspense fallback={'outer loading'} ><Story /></Suspense>]
 
 } satisfies Meta<typeof SearchInputWithPromiseValidation>;
 
